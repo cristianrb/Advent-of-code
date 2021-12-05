@@ -61,10 +61,11 @@ fun createDiagramFromListPartTwo(input: List<String>): Array<IntArray> {
         val x1 = pair1[0].trim().toInt()
         val y1 = pair1[1].toInt()
 
-        while ( (abs(x1-x0) >= 0 || abs(y1-y0) >= 0) && (x0 != -1 && x1 != -1 && y0 != -1 && y1 != -1)  ) {
+        var end = false
+        while ( (abs(x1-x0) >= 0 || abs(y1-y0) >= 0) && (!end)  ) {
             mat[y0][x0]++
             if ((x0 == x1 && x0 == y0 && x0 == y1) || (x0 == x1 && y0 == y1)) {
-                x0 = -1
+                end = true
             } else {
                 if (x0 != x1) x0 = increaseOrDecreaseCoord(x0, x1)
                 if (y0 != y1) y0 = increaseOrDecreaseCoord(y0, y1)
