@@ -2,7 +2,7 @@ import java.io.File
 import java.util.*
 
 fun main() {
-    val input = File("src/sample")
+    val input = File("src/input")
         .readLines()
         .map { it.split("-") }
         .flatMap { (begin, end) -> listOf(begin to end, end to begin) }
