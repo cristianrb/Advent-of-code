@@ -30,7 +30,7 @@ fun solve(input: List<List<String>>) {
             closingScores.add(findClosingScore(stack))
         }
     }
-    
+
     closingScores.sort()
 
     println(score)
