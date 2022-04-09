@@ -1,4 +1,4 @@
-module cristianrb-aoc-2015-d2
+module cristianrbaoc2015d2
 
 go 1.16
 
