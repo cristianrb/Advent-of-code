@@ -9,18 +9,22 @@ import (
 
 func main() {
 	data, _ := readLines("inputs/input_01")
-	res := findSurfaceFromList(data)
-	print(res)
+	res := findResFromList(data, findSurface)
+	println(res)
+
+	dataSecond, _ := readLines("inputs/input_02")
+	resSecond := findResFromList(dataSecond, findRibbon)
+	println(resSecond)
 }
 
-func findSurfaceFromList(data []string) int {
+func findResFromList(data []string, function func(l, w, h int) int) int {
 	res := 0
 	for _, line := range data {
 		lineSplit := strings.Split(line, "x")
 		l, _ := strconv.Atoi(lineSplit[0])
 		w, _ := strconv.Atoi(lineSplit[1])
 		h, _ := strconv.Atoi(lineSplit[2])
-		res += findSurface(l, w, h)
+		res += function(l, w, h)
 	}
 
 	return res
@@ -32,6 +36,21 @@ func findSurface(length int, width int, height int) int {
 	hl := height * length
 
 	return 2*lw + 2*wh + 2*hl + minOf(lw, wh, hl)
+}
+
+func findRibbon(length int, width int, height int) int {
+	minVal := minOf(length, width, height)
+	var secondMinVal int
+	if minVal == length {
+		secondMinVal = minOf(width, height)
+	} else if minVal == width {
+		secondMinVal = minOf(length, height)
+	} else {
+		secondMinVal = minOf(width, length)
+	}
+
+	wrapRibbon := minVal*2 + secondMinVal*2
+	return length*width*height + wrapRibbon
 }
 
 func minOf(vars ...int) int {
