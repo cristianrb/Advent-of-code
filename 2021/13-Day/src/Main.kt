@@ -1,8 +1,6 @@
 import java.io.File
-import kotlin.collections.ArrayList
 
 fun main() {
-
     val points = arrayListOf<Pair<Int, Int>>()
     val folds = arrayListOf<String>()
 
@@ -17,10 +15,21 @@ fun main() {
         }
 
     val matrix = createMat(points)
-    println(solve(matrix, folds))
+    println("Part 1: " + solve(matrix, folds, true))
+    println("Part 2:")
+    solve(matrix, folds, false)
 }
 
-fun solve(matrix: Array<CharArray>, folds: ArrayList<String>) : Int {
+private fun createMat(points: ArrayList<Pair<Int, Int>>): Array<CharArray> {
+    val maxX = points.maxByOrNull { it.second }!!.second + 1
+    val maxY = points.maxByOrNull { it.first }!!.first + 1
+
+    val matrix = Array(maxX) { CharArray(maxY) { '.' } }
+    points.forEach { matrix[it.second][it.first] = '#' }
+    return matrix
+}
+
+fun solve(matrix: Array<CharArray>, folds: ArrayList<String>, stopEarly: Boolean): Int {
     var rowSize = matrix.size
     var colSize = matrix[0].size
     for (fold in folds) {
@@ -29,24 +38,23 @@ fun solve(matrix: Array<CharArray>, folds: ArrayList<String>) : Int {
         } else if (fold.contains("fold along x=")) {
             colSize = foldX(fold, matrix)
         }
-        printMat(matrix, rowSize, colSize)
-        return matrix.countOnes()
+        if (stopEarly)
+            return matrix.countChar('#')
     }
 
-    println(rowSize)
-    println(colSize)
     printMat(matrix, rowSize, colSize)
-    return matrix.countOnes()
+    return matrix.countChar('#')
 }
 
 private fun foldX(fold: String, matrix: Array<CharArray>): Int {
     val maxX = fold.split("fold along x=")[1].toInt()
     for (i in matrix.indices) {
         for (j in matrix[0].indices) {
-            if (j < maxX) continue
-            val newJ = matrix[0].size - j - 1
-            if (matrix[i][j] != '.')
-                matrix[i][newJ] = matrix[i][j]
+            if (j < maxX) {
+                continue
+            }
+            val newJ = maxX - (j - maxX)
+            if (matrix[i][j] != '.') matrix[i][newJ] = matrix[i][j]
             matrix[i][j] = '.'
         }
     }
@@ -56,31 +64,26 @@ private fun foldX(fold: String, matrix: Array<CharArray>): Int {
 private fun foldY(fold: String, matrix: Array<CharArray>): Int {
     val maxY = fold.split("fold along y=")[1].toInt()
     for (i in matrix.indices) {
-        if (i < maxY) continue
+        if (i < maxY) {
+            continue
+        }
         for (j in matrix[0].indices) {
-            val newI = matrix.size - i - 1
-            if (matrix[i][j] != '.')
-                matrix[newI][j] = matrix[i][j]
+            val newI = maxY - (i - maxY)
+            if (matrix[i][j] != '.') matrix[newI][j] = matrix[i][j]
             matrix[i][j] = '.'
         }
     }
     return maxY
 }
 
-fun Array<CharArray>.countOnes(): Int {
+fun Array<CharArray>.countChar(character: Char): Int {
     var counter = 0
     map {
         it.map {
-            if (it == '#') counter++
+            if (it == character) counter++
         }
     }
     return counter
-}
-
-private fun createMat(points: ArrayList<Pair<Int, Int>>): Array<CharArray> {
-    val matrix = Array(points.maxByOrNull { it.second }!!.second + 1) { CharArray(points.maxByOrNull { it.first }!!.first + 1) { '.'} }
-    points.forEach { matrix[it.second][it.first] = '#' }
-    return matrix
 }
 
 private fun printMat(matrix: Array<CharArray>, rowSize: Int, colSize: Int) {
@@ -90,5 +93,4 @@ private fun printMat(matrix: Array<CharArray>, rowSize: Int, colSize: Int) {
         }
         println()
     }
-    println("======================")
 }
