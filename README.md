@@ -5,7 +5,7 @@ These are my solutions in different languages for Advent of Code.
 | Day | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 |
 | ---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | 01  | [Go](/2015/Day-01/cmd/main.go)  | TBD | TBD | TBD | TBD | TBD | [Kotlin](/2021/1-Day/src/Main.kt) |
-| 02  | TBD  | TBD | TBD | TBD | TBD | TBD | [Kotlin](/2021/2-Day/src/Main.kt) |
+| 02  | [Go](/2015/Day-02/src/cmd/main.go)  | TBD | TBD | TBD | TBD | TBD | [Kotlin](/2021/2-Day/src/Main.kt) |
 | 03  | TBD  | TBD | TBD | TBD | TBD | TBD | [Kotlin](/2021/3-Day/src/Main.kt) |
 | 04  | TBD  | TBD | TBD | TBD | TBD | TBD | [Kotlin](/2021/4-Day/src/Main.kt) |
 | 05  | TBD  | TBD | TBD | TBD | TBD | TBD | [Kotlin](/2021/5-Day/src/Main.kt) |
