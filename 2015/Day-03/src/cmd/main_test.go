@@ -8,11 +8,28 @@ import (
 
 var countHousesTests = []struct {
 	input    string
-	expected int
+	expected map[Coords]bool
 }{
-	{">", 2},
-	{"^>v<", 4},
-	{"^v^v^v^v^v", 2},
+	{
+		">", map[Coords]bool{
+			Coords{0, 0}: true,
+			Coords{1, 0}: true,
+		},
+	},
+	{
+		"^>v<", map[Coords]bool{
+			Coords{0, 0}: true,
+			Coords{1, 0}: true,
+			Coords{0, 1}: true,
+			Coords{1, 1}: true,
+		},
+	},
+	{
+		"^v^v^v^v^v", map[Coords]bool{
+			Coords{0, 0}: true,
+			Coords{0, 1}: true,
+		},
+	},
 }
 
 func Test_CountHouses_SampleCases(t *testing.T) {
