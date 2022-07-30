@@ -1,7 +1,7 @@
 package main
 
 import (
-	"cristianrbaoc2015d5/src/io"
+	"cristianrb2015/io"
 )
 
 func main() {

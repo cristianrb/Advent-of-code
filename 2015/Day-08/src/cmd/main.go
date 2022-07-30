@@ -1,7 +1,7 @@
 package main
 
 import (
-	"cristianrbaoc2015d8/src/io"
+	"cristianrb2015/io"
 	"strconv"
 )
 
