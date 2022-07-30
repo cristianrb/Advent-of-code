@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-	lines, _ := io.ReadLines("inputs/input_01")
+	lines, _ := io.ReadLines("Day-05/inputs/input_01")
 	counter := 0
 	for _, line := range lines {
 		if isNiceV2(line) {

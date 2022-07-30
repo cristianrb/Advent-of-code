@@ -3,11 +3,11 @@ package main
 import "io/ioutil"
 
 func main() {
-	moves, _ := ioutil.ReadFile("inputs/input_01")
+	moves, _ := ioutil.ReadFile("Day-03/inputs/input_01")
 	houses := countHouses(string(moves))
 	println(len(houses))
 
-	moves2, _ := ioutil.ReadFile("inputs/input_02")
+	moves2, _ := ioutil.ReadFile("Day-03/inputs/input_02")
 	santaMoves := ""
 	roboSantaMoves := ""
 	for i, move := range string(moves2) {

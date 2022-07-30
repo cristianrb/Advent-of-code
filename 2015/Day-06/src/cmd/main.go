@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	lines, _ := io.ReadLines("inputs/input_01")
+	lines, _ := io.ReadLines("Day-06/inputs/input_01")
 	println(doOnLights(lines))
 }
 

@@ -8,11 +8,11 @@ import (
 )
 
 func main() {
-	data, _ := io.ReadLines("inputs/input_01")
+	data, _ := io.ReadLines("Day-02/inputs/input_01")
 	res := findResFromList(data, findSurface)
 	println(res)
 
-	dataSecond, _ := io.ReadLines("inputs/input_02")
+	dataSecond, _ := io.ReadLines("Day-02/inputs/input_02")
 	resSecond := findResFromList(dataSecond, findRibbon)
 	println(resSecond)
 }

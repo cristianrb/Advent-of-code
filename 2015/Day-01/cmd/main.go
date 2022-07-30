@@ -3,11 +3,11 @@ package main
 import "io/ioutil"
 
 func main() {
-	data, _ := ioutil.ReadFile("inputs/input_01")
+	data, _ := ioutil.ReadFile("Day-01/inputs/input_01")
 	floor, _ := findFloor(string(data), false)
 	println(floor)
 
-	data2, _ := ioutil.ReadFile("inputs/input_02")
+	data2, _ := ioutil.ReadFile("Day-01/inputs/input_02")
 	floor, basementChar := findFloor(string(data2), true)
 	println(floor)
 	println(basementChar)

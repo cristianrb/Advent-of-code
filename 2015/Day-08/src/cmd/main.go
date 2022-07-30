@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	lines, _ := io.ReadLines("inputs/input_01")
+	lines, _ := io.ReadLines("Day-08/inputs/input_01")
 	total1 := countTotalCharactersDecoded(lines)
 	println(total1)
 	total2 := countTotalCharactersEncoded(lines)

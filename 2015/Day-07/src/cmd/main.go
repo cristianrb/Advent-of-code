@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	lines, _ := io.ReadLines("inputs/input_01")
+	lines, _ := io.ReadLines("Day-07/inputs/input_01")
 	wires := runCircuit(lines)
 	println(wires["a"])
 }
