@@ -11,7 +11,7 @@ These are my solutions in different languages for Advent of Code.
 |  05 | [Go](/2015/Day-05/src/cmd/main.go) | TBD  | TBD  | TBD  | TBD  | TBD  | [Kotlin](/2021/5-Day/src/Main.kt)  |
 |  06 | [Go](/2015/Day-06/src/cmd/main.go) | TBD  | TBD  | TBD  | TBD  | TBD  | [Kotlin](/2021/6-Day/src/Main.kt)  |
 |  07 | [Go](/2015/Day-07/src/cmd/main.go) | TBD  | TBD  | TBD  | TBD  | TBD  | [Kotlin](/2021/7-Day/src/Main.kt)  |
-|  08 |                TBD                 | TBD  | TBD  | TBD  | TBD  | TBD  | [Kotlin](/2021/8-Day/src/Main.kt)  |
+|  08 | [Go](/2015/Day-08/src/cmd/main.go) | TBD  | TBD  | TBD  | TBD  | TBD  | [Kotlin](/2021/8-Day/src/Main.kt)  |
 |  09 |                TBD                 | TBD  | TBD  | TBD  | TBD  | TBD  | [Kotlin](/2021/9-Day/src/Main.kt)  |
 |  10 |                TBD                 | TBD  | TBD  | TBD  | TBD  | TBD  | [Kotlin](/2021/10-Day/src/Main.kt) |
 |  11 |                TBD                 | TBD  | TBD  | TBD  | TBD  | TBD  | [Kotlin](/2021/11-Day/src/Main.kt) |
