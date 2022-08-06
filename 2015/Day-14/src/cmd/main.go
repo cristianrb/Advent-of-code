@@ -3,9 +3,8 @@ package main
 import (
 	"cristianrb2015/io"
 	"cristianrb2015/util"
+	"fmt"
 	"sort"
-	"strconv"
-	"strings"
 )
 
 type Reeinder struct {
@@ -75,11 +74,10 @@ func addScoreIfLeading(reeinders []*Reeinder) {
 func findReeinderStats(lines []string) []*Reeinder {
 	var reeinders []*Reeinder
 	for _, line := range lines {
-		lineSplit := strings.Split(line, " ")
-		name := lineSplit[0]
-		topSpeed, _ := strconv.Atoi(lineSplit[3])
-		flySeconds, _ := strconv.Atoi(lineSplit[6])
-		restSeconds, _ := strconv.Atoi(lineSplit[13])
+		var name string
+		var topSpeed, flySeconds, restSeconds int
+		fmt.Sscanf(line, "%s can fly %d km/s for %d seconds, but then must rest for %d seconds.", &name, &topSpeed, &flySeconds, &restSeconds)
+
 		reeinder := &Reeinder{
 			name,
 			topSpeed,
