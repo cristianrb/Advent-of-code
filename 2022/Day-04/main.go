@@ -41,5 +41,5 @@ func isContained(input string) bool {
 	n2p1, _ := strconv.Atoi(strings.Split(pairs[1], "-")[0])
 	n2p2, _ := strconv.Atoi(strings.Split(pairs[1], "-")[1])
 
-	return (n1p1 >= n2p1 && n1p1 <= n2p2) || (n1p2 >= n2p1 && n1p2 <= n2p2) || (n2p1 >= n1p1 && n2p1 <= n1p2) || (n2p2 >= n1p1 && n2p2 <= n1p2)
+	return n1p2 >= n2p1 && n1p1 <= n2p2
 }
