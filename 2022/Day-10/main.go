@@ -60,9 +60,9 @@ func drawCRT(instructions []string) {
 
 func computeCRTCycle(nCycles int, x int, line string) (int, string) {
 	if nCycles == x || nCycles == x-1 || nCycles == x+1 {
-		line += "#"
+		line += "██"
 	} else {
-		line += "."
+		line += "░░"
 	}
 
 	nCycles++
